@@ -2,22 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\HomeModel;
 class PagesController extends Controller {
     public function getIndex() {
-        return view('pages/welcome');
+
+    	$homes=HomeModel::orderBy("created_at","desc")->take(4)->get();
+        return view('pages/welcome',compact("homes"));
     }
 
-    public function getAbout() {
-        $first = "Sagun";
-        $last = "Lage";
-        $full = $first." ".$last;
-        $mail = "sagoonraj@gmail.com";
-        $data = [];
-        $data['email'] = $mail;
-        $data['fullname'] = $full;
-        return view('pages/about')->with('data',$data);
-        //or return view('pages/about')->withFullname($full);
-    }
 
     public function getContact(){
         return view('pages/contact');

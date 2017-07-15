@@ -1,18 +1,53 @@
-@extends('main')
+@extends('layouts.main')
 @section('title', '| About')
 @section('content')
-        <div class="row">
-            <div class="col-md-12">
-                <h1>About Us</h1>
-                <p>This is all about us. Thank you for stopping by.</p>
-            </div>
-        </div>
+     <div class="container">
+            <div class="row">
+                <div class="container">
+                    <h2 class="page-header">About Us</h2>
+                    <p> </p><h4>This website is a Tourism based portal.
+                        Mainly focusing on the homestay system, instead of going to hotels tourist can stay in the homes of local people. 
+                        This website gives the information about the tourism spots of Nepal .
+                        It gives the tourists chance of experiencing the lifestyle of the local people in Nepal. </h4> <p></p>
+  
+                </div>
+                 <div class="col-lg-12">
+                    <h2 class="page-header">OUR TEAM </h2>              
+
+                <div class="col-lg-3 col-sm-6 text-left">
+                    <img class="img-circle img-responsive img-center" src="images/sagun.jpg" alt="">
+
+                    <h3>Sagun Raj lage
+                        <br><small>Co-Founder</small>
+                    </h3>
+                    
+                </div>
+                <div class="col-lg-3 col-sm-6 text-left">
+                    <img class="img-circle img-responsive img-center" src="images/ashok.jpg" alt="">
+                    <h3>Ashok Poudel
+                        <br><small>Co-Founder</small>
+                    </h3>
+                    <p> </p>
+                </div>
+                <div class="col-lg-3 col-sm-6 text-left">
+                    <img class="img-circle img-responsive img-center" src="images/shishir.jpg" alt="">
+                    <h3>Shishir Shrestha
+                        <br><small>Co-Founder</small>
+                    </h3>
+                    
+                </div>
+                    <div class="col-lg-3 col-sm-6 text-left">
+                    <img class="img-circle img-responsive img-center" src="images/anika.jpg" alt="">
+                    <h3>Anika Shrestha
+                        <br><small>Co-Founder</small>
+                    </h3>
+                    
+                </div>
             
-    </div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  </body>
-</html>
+            </div>
+
+        <hr>
+
+
+</div>
 @endsection
