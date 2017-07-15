@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',"role"
+        'name', 'email', 'password',
     ];
 
     /**
@@ -26,9 +26,4 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
-
-    public function homes(){
-        return $this->hasMany("App\HomeModel","user_id");
-    }
 }

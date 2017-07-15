@@ -6,13 +6,6 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use Illuminate\Support\Str;
-use Mail;
-use App\Mail\VerificationMail;
-use Session;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Auth\Events\Registered;
 
 class RegisterController extends Controller
 {
@@ -58,8 +51,6 @@ class RegisterController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
-            'role'=>"required|integer",
-      
         ]);
     }
 
@@ -70,51 +61,11 @@ class RegisterController extends Controller
      * @return \App\User
      */
     protected function create(array $data)
-    {    
-        if($data["role"]==1){
-            $role=1;
-        }else{
-            $role=2;
-        }
-        $user= User::create([
+    {
+        return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            "role"=>$role
-            
-
-
         ]);
-        
-
-
-
-
-        return $user;
     }
-
-
-
-    protected function verify(){
-
-    }
-
-
-    public function sendlink($user){
-      Mail::to($user["email"])->send(new VerificationMail($user));
-
-    }
-
-
-   
-
-    public function register(Request $request)
-    {
-        $this->validator($request->all())->validate();
-
-        event(new Registered($user = $this->create($request->all())));
-         return redirect("/");
-    }
-
 }
-       
